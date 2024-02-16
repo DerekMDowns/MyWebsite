@@ -1,0 +1,128 @@
+
+.checkout-card {
+  background:#fff;
+  max-width:450px;
+  padding:2rem;
+  box-shadow:1px 2px 4px rgba(0,0,0,.2);
+    margin-left: 38%;
+    margin-bottom: 200px;
+    margin-top: 175px;
+}
+.checkout-card .title span{
+  color:#5578e1;
+}
+.checkout-card .title p{
+  font-size:1.3rem;
+  text-align:center;
+  padding: 1rem;
+}
+.price-container{
+  display:flex;
+  gap:.95rem;
+  justify-content:space-evenly;
+}
+.price-card {
+  position:relative;
+/*   border:1px solid #bcbcbc; */
+  padding:1rem;
+  border-radius:3px;
+  width:100%;
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  cursor:pointer;
+  outline:none;
+  transition:.3s ease-in;
+}
+.price-card label{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  border-radius:3px;
+  border:1px solid #bcbcbc;
+  cursor:pointer;
+}
+.price-card input[type="radio"]:checked ~ label{
+  border:1px solid #5578E1;
+  background:rgba(85, 120, 225,.2);
+  color:#5578e1;
+  outline:none;
+  border-width:2px;
+}
+.price-card input[type="radio"]{
+  width:30px;
+  height:auto;
+  border:0;
+  transform:scale(1.5);
+}
+.price-card .content{
+  display:flex;
+  flex-direction:column;
+}
+.price-card .content span{
+  font-size:.7rem;
+}
+.detail-info{
+  padding-top:2rem;
+}
+.info{
+  margin-bottom:1rem;
+}
+.info h3{
+  letter-spacing:1px;
+}
+.info small{
+  font-size:.74rem;
+}
+.input-field{
+  display:flex;
+  flex-direction:column;
+}
+.input-field label{
+  font-size:.7rem;
+  padding-bottom:5px;
+  font-weight:500;
+}
+.input-field input{
+  padding:.75rem;
+  border-radius:3px;
+  width:100%;
+  border: 1px solid #9EA0A9;
+}
+.input-field input:focus{
+  border: 1px solid #5578e1;
+  outline:none;
+}
+
+.grid{
+  display:flex;
+  gap:10px;
+  margin-top:.5rem;
+  justify-content:space-evenly;
+}
+
+.detail-info p{
+  font-size:.7rem;
+  text-align:center;
+  margin-top:1.8rem;
+}
+.btn{
+  margin-top:.7rem;
+  width:100%;
+  padding:1rem;
+  letter-spacing:.8px;
+  background:#5578e1;
+  border:none;
+  color:#fff;
+  border-radius:3px;
+  cursor:pointer;
+  transition:.2s ease-in-out;
+}
+.btn:hover{
+  background:#506dc7;
+  letter-spacing:1px;
+  box-shadow:1px 4px 8px rgba(80, 109, 199,.3);
+}

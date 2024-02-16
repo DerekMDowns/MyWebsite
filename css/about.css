@@ -1,0 +1,53 @@
+div.pop h2 {
+    font-size: 225%;
+    text-align: center;
+    padding-top: 50px;
+    color: black;
+}
+
+div.poplogo {
+    padding-top: 25px;
+    text-align: center;
+}
+
+div.pvusdlogo {
+    text-align: center;
+}
+
+div.p {
+    padding-left: 15%;
+	padding-right: 50%;
+    text-align: left;
+	font-size: 150%;
+}
+
+h1 {
+    padding-left: 15%;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+
+div.pete {
+    float: right;
+    padding-right: 15%;
+    padding-top: 50px;
+}
+
+@media only screen and (max-width: 700px) {
+  .featured-items {
+    width: 50%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .featured-items {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
