@@ -37,7 +37,7 @@ a {
 }
 .item:not(.button) a:hover,
 .item a:hover::after {
-    color: #ccc;
+    color: skyblue;
     outline:none;
 }
 .has-submenu > a {
