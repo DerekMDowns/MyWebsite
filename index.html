@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="css/tabs.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/footer.css">
-    <!-- links js -->
-    <script type="text/javascript" src="js/main.js"></script>
     <!-- favicon -->
     <link rel="shortcut icon" type="img/resumeLogo.png" href="img/resumeLogo.png">
     <!-- fa link -->
@@ -18,20 +16,26 @@
 </head>
 <!-- body -->
 <body>
-<!-- nav bar --> 
+  <div class="upper-nav">
+    <nav>
+        <ul class="upper-menu">
+            <li class="item"><a href="logIn.html"><i class="fas fa-user"></i> Login</a></li>
+            <li class="item"><a href="signUp.html">Sign Up</a></li>
+            <li class="item"><a href="apparel.html"><i class="fas fa-shopping-cart"></i></a></li>
+        </ul>
+    </nav>
+</div>
+
+<!-- Main Nav Bar -->
 <nav>
-   <ul class="menu">
-    <li class="logo"><a href="index.html"><img src="img/resumeLogo.png" alt="Logo" width="200px"></a></li>
-    <li class="item"><a href="index.html">Home</a></li>
-    <li class="item"><a href="blog.html">Blog</a></li>
-    <li class="item"><a href="contact.html">Contact</a></li>
-    <li class="item"><a href="store.html">Store</a></li>
-    <li class="item"><a href="logIn.html"><i class="fas fa-regular fa-user fa-sm"></i> Login</a></li>
-    <li class="item"><a href="signUp.html"></i> Sign Up</a></li>
-    <li class="item"><a href="apparel.html"><i class="fas fa-shopping-cart fa-sm"></i></a></li>
-        <li class="item has-submenu">
-            <li class="toggle"><a href="#"><i class="fas fa-bars fa-3x"></i></a></li>
-   </ul>
+    <ul class="menu">
+        <li class="logo"><a href="index.html"><img src="img/resumeLogo.png" alt="Logo" width="200"></a></li>
+        <li class="item"><a href="index.html">Home</a></li>
+        <li class="item"><a href="blog.html">Blog</a></li>
+        <li class="item"><a href="contact.html">Contact</a></li>
+        <li class="item"><a href="store.html">Store</a></li>
+        <li class="toggle"><a href="#"><i class="fas fa-bars fa-3x"></i></a></li>
+    </ul>
 </nav>
 <!--homepage main-container-->
 <div class="main-container">    
@@ -104,6 +108,7 @@
     </ul>
   </div>
 </footer>
+<!--Link JS-->>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

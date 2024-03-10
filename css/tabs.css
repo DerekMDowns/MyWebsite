@@ -180,5 +180,69 @@ a {
   }
 	
 }
+/*upper nav bar*/
+.upper-nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  background-color: #333; /* Dark background for contrast */
+  color: white;
+}
+
+.upper-nav nav {
+  display: block;
+}
+
+.upper-menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.upper-menu li {
+  margin-left: 20px;
+}
+
+.upper-menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+/*Responsive portion*/
+@media (max-width: 768px) {
+  .upper-nav {
+      justify-content: center;
+  }
+
+  .upper-menu li {
+      margin-left: 10px;
+      margin-right: 10px;
+  }
+
+  .upper-menu li a {
+      font-size: 14px;
+  }
+}
+.upper-menu li a:hover, .upper-menu li a:focus {
+  color: #1E90FF; /* Bright blue for visibility */
+  text-decoration: underline;
+}
+.upper-menu li a i {
+  margin-right: 5px;
+}
+
+.fas {
+  color: #ADD8E6; /* Light blue for a subtle contrast */
+  font-size: 20px;
+}
+
+/* Adjust icon size on smaller screens */
+@media (max-width: 768px) {
+  .fas {
+      font-size: 18px;
+  }
+}
+
 
 
