@@ -1,13 +1,21 @@
 div.main-container {
-    text-align: center;
-    padding-top: 150px;
-    padding-bottom: 150px;
-    color: black;
+  text-align: center;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  color: black;
 }
 .main-container h1 {
+  font-family: "Renogare Soft", Times, serif;
   font-size: 300%;
+  padding-bottom: 25px;
   padding-top: 50px;
 }
+@media only screen and (min-width: 1000px) {
+.about-photo {
+  margin: 0px 0px 0px -700px;
+  }
+}
+
 @media only screen and (max-width: 700px) {
   .featured-items {
     width: 50%;

@@ -180,24 +180,26 @@ a {
   }
 	
 }
-/*upper nav bar*/
+/* Upper navigation styling */
 .upper-nav {
-  display: flex;
-  justify-content: flex-end;
-  padding: 10px 20px;
-  background-color: #333; /* Dark background for contrast */
+  background-color: #333; /* Dark background color */
   color: white;
+  padding: 10px 20px;
 }
 
 .upper-nav nav {
-  display: block;
+  max-width: 1200px; /* Adjust as needed */
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end; /* Aligns items to the right */
 }
 
 .upper-menu {
   list-style: none;
   display: flex;
-  margin: 0;
+  align-items: center;
   padding: 0;
+  margin: 0;
 }
 
 .upper-menu li {
@@ -209,7 +211,19 @@ a {
   text-decoration: none;
   font-size: 16px;
 }
-/*Responsive portion*/
+
+.upper-menu li a:hover,
+.upper-menu li a:focus {
+  color: #1E90FF; /* Highlight color on hover */
+  text-decoration: underline;
+}
+
+/* FontAwesome icon adjustments */
+.upper-menu li a i {
+  margin-right: 5px;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .upper-nav {
       justify-content: center;
@@ -223,22 +237,7 @@ a {
   .upper-menu li a {
       font-size: 14px;
   }
-}
-.upper-menu li a:hover, .upper-menu li a:focus {
-  color: #1E90FF; /* Bright blue for visibility */
-  text-decoration: underline;
-}
-.upper-menu li a i {
-  margin-right: 5px;
-}
-
-.fas {
-  color: #ADD8E6; /* Light blue for a subtle contrast */
-  font-size: 20px;
-}
-
-/* Adjust icon size on smaller screens */
-@media (max-width: 768px) {
+  
   .fas {
       font-size: 18px;
   }

@@ -9,7 +9,9 @@ footer .footer-cta .button{
   color: black;
   background-color: white;
   cursor: pointer;
-  border-radius: 10px;
+  font-weight: bold;
+  font-size: 0.9375rem;
+  border-radius: 12px;
   padding: 6px;
   width: 200px;
 }
