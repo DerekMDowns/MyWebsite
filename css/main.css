@@ -10,7 +10,13 @@ div.main-container {
   padding-bottom: 25px;
   padding-top: 50px;
 }
-@media only screen and (min-width: 1000px) {
+.main-container p {
+  font-family: "Renogare Soft", Times, serif;
+  font-size: 20px;
+  padding-bottom: 25px;
+  padding-top: 50px;
+}
+@media only screen and (min-width: 1200px) {
 .about-photo {
   margin: 0px 0px 0px -700px;
   }
