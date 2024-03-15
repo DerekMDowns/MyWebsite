@@ -1,8 +1,6 @@
 .footer {
   background-color: black;
   color: white;
-  padding: 2.5rem;
-  padding-bottom: 0;
   text-align: center;
 }
 footer .footer-cta .button{
@@ -11,8 +9,8 @@ footer .footer-cta .button{
   cursor: pointer;
   font-weight: bold;
   font-size: 0.9375rem;
-  border-radius: 12px;
-  padding: 6px;
+  border-radius: 15px;
+  padding: 7px;
   width: 200px;
 }
 footer .footer-cta .button:hover{
@@ -52,7 +50,7 @@ footer .footer-cta .button:hover{
 
 @media (max-width: 63.9375em) {
   .footer .footer-social-media {
-    margin-bottom: 1.875rem;
+    margin-bottom: 20px;
   }
 }
 
