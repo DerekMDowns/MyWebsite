@@ -38,6 +38,7 @@ footer .footer-cta .button:hover{
 
 @media (max-width: 63.9375em) {
   .footer .footer-logo {
+    padding-top: 12px;
     margin-bottom: 1.875rem;
   }
 }
@@ -62,11 +63,11 @@ footer .footer-cta .button:hover{
 }
 
 .footer .footer-social-media a:not(:last-child) {
-  margin-right: 1rem;
+  margin-right: 20px;
 }
 
 .footer .footer-social-media a:hover svg {
-  transform: scale(1.25);
+  transform: scale(1.15);
   transition: transform 0.2s ease-in-out;
 }
 
@@ -87,7 +88,7 @@ footer .footer-cta .button:hover{
 
 .footer .footer-links a {
   color: #fff;
-  font-size: 0.9375rem;
+  font-size: 18px;
   line-height: 2.25;
   transition: color 0.2s ease-in-out;
 }
@@ -129,8 +130,9 @@ footer .footer-cta .button:hover{
 }
 
 .footer .footer-copyright p {
-  color: #ACADAD;
-  font-size: 0.875rem;
+  color: gray;
+  margin-top: auto;
+  font-size: 9px;
 }
 
 @media (min-width: 64em) {
@@ -162,7 +164,8 @@ footer .footer-cta .button:hover{
 
 .attribution .footer-github {
   list-style: none;
-  margin-left: 0.3125rem;
+  margin-left: 2.5px;
+  position: relative; top: 6px; 
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -175,7 +178,7 @@ footer .footer-cta .button:hover{
 }
 
 .attribution .footer-github img:hover {
-  transform: scale(1.25);
+  transform: scale(1.15);
 }
 
 .attribution .footer-github img.light {

@@ -1,37 +1,63 @@
-div.main-container {
-  text-align: center;
-  padding-top: 150px;
-  padding-bottom: 150px;
-  color: black;
+.main-container {
+  display: flex;
+  flex-direction: column; /* Keep stacking the flex items vertically */
+  align-items: center; /* Center align items horizontally */
+}
+
+/* Create a flex container for about-photo and paragraph text */
+.main-container .about-container {
+  display: flex; /* Enable flexbox */
+  align-items: top; /* Center align the items vertically */
+  justify-content: center; /* Center the items horizontally */
+  width: 100%; /* Use the full width of the parent container */
+}
+
+.main-container .about-photo {
+  margin-bottom: 50px;
+  margin-left: 300px;
+  margin-right: 20px; /* Add some space between the photo and the text */
+  flex-shrink: 0; /* Prevent the photo from shrinking */
 }
 .main-container h1 {
+  margin-top: 100px; /* Align to the top */
+  margin-bottom: 25px;
+  text-align: center; /* Center the text */
+  color: black;
   font-family: "Renogare Soft", Times, serif;
-  font-size: 300%;
-  padding-bottom: 25px;
-  padding-top: 50px;
+  font-size: 350%;
 }
+
 .main-container p {
   font-family: "Renogare Soft", Times, serif;
-  font-size: 20px;
-  padding-bottom: 25px;
-  padding-top: 50px;
+  font-size: 30px;
+  margin-top: 20px;
+  margin-right: 300px;
 }
-@media only screen and (min-width: 1200px) {
-.about-photo {
-  margin: 0px 0px 0px -700px;
+
+/* Desktop menu */
+@media screen and (max-width: 1024px)  {
+  .main-container .about-photo {
+    margin-right: 50px;
+  }
+  .main-container .about-container {
+    flex-direction: column; /* Stack items vertically on smaller screens */
   }
 }
 
-@media only screen and (max-width: 700px) {
-  .featured-items {
-    width: 50%;
-    margin: 6px 0;
+/* Tablet menu */
+@media screen and (max-width: 720px)  {
+  .main-container .about-photo {
+    margin-right: 50px;
+  }
+  .main-container .about-container {
+    flex-direction: column; /* Stack items vertically on smaller screens */
   }
 }
 
+/*Mobile*/
 @media only screen and (max-width: 500px) {
-  .featured-items {
-    width: 100%;
+  .main-container .about-container {
+    flex-direction: column; /* Stack items vertically on smaller screens */
   }
 }
 

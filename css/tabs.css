@@ -9,7 +9,6 @@ body {
     font-size: 16px;
 }
 nav {
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -25,13 +24,14 @@ a {
 }
 .logo {
     font-size: 20px;
-    padding: 7.5px 10px 7.5px 0;
+    padding: 2px 5px 2px 0;
 }
-.item {
+.menu .item {
     font-size: 20px;
     padding: 10px;
+    position: relative; top: 25px; 
 }
-.item.button {
+.item .button {
     padding: 9px 5px;
     outline:none;
 }
@@ -133,7 +133,7 @@ a {
 	
   /* Button up from tablet screen */
   .menu li.button a {
-    padding: 10px 15px;
+    padding: 5px 7.5px;
     margin: 5px 0;
   }
 	
@@ -160,7 +160,7 @@ a {
     order: 0;
   }
 	
-  .item {
+ .item {
     order: 1;
     position: relative;
     display: block;
@@ -181,14 +181,9 @@ a {
 	
 }
 /* Upper navigation styling */
-.upper-nav {
-  background-color: #333; /* Dark background color */
-  color: white;
-  padding: 10px 20px;
-}
-
 .upper-nav nav {
-  max-width: 1200px; /* Adjust as needed */
+  background-color: black; /* Black background color */
+  width: 100%; /* Full width */
   margin: 0 auto;
   display: flex;
   justify-content: flex-end; /* Aligns items to the right */
@@ -198,7 +193,7 @@ a {
   list-style: none;
   display: flex;
   align-items: center;
-  padding: 0;
+  padding: 10px;
   margin: 0;
 }
 
@@ -212,15 +207,16 @@ a {
   font-size: 16px;
 }
 
+
 .upper-menu li a:hover,
 .upper-menu li a:focus {
-  color: #1E90FF; /* Highlight color on hover */
-  text-decoration: underline;
+  color: skyblue; /* Highlight color on hover */
+  text-decoration: none;
 }
 
 /* FontAwesome icon adjustments */
 .upper-menu li a i {
-  margin-right: 5px;
+  margin-right: 0px;
 }
 
 /* Responsive adjustments */
