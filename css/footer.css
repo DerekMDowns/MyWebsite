@@ -50,7 +50,7 @@ footer .footer-cta .button:hover{
 
 @media (max-width: 63.9375em) {
   .footer .footer-social-media {
-    margin-bottom: 20px;
+    margin-bottom: 1.875rem;
   }
 }
 
@@ -164,13 +164,13 @@ footer .footer-cta .button:hover{
   list-style: none;
   margin-left: 0.3125rem;
   display: inline-flex;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
 }
 
 .attribution .footer-github img {
   grid-area: github;
-  width: 20px;
-  height: 20px;
+  width: 25px;
   transition: transform 0.2s ease-in-out;
 }
 
