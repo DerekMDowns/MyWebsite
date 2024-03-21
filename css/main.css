@@ -1,68 +1,80 @@
+body {
+  height: 100%;
+}
 .main-container {
+  position: relative;
   display: flex;
-  flex-direction: column; /* Keep stacking the flex items vertically */
-  align-items: center; /* Center align items horizontally */
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Create a flex container for about-photo and paragraph text */
 .main-container .about-container {
-  display: flex; /* Enable flexbox */
-  align-items: top; /* Center align the items vertically */
-  justify-content: center; /* Center the items horizontally */
-  width: 100%; /* Use the full width of the parent container */
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  width: 100%;
 }
 
 .main-container .about-photo {
   margin-bottom: 50px;
   margin-left: 300px;
-  margin-right: 20px; /* Add some space between the photo and the text */
-  flex-shrink: 0; /* Prevent the photo from shrinking */
+  margin-right: 20px;
+  flex-shrink: 0;
 }
+
 .main-container h1 {
-  margin-top: 100px; /* Align to the top */
+  margin-top: 100px;
   margin-bottom: 25px;
-  text-align: center; /* Center the text */
+  font-weight: bold;
+  text-align: center;
   color: black;
-  font-family: "Renogare Soft", Times, serif;
-  font-size: 350%;
+  font-family: "Renogare Soft", sans-serif;
+  font-size: 100px;
 }
 
 .main-container p {
-  font-family: "Renogare Soft", Times, serif;
+  font-family: "Renogare Soft", sans-serif;
   font-size: 30px;
   margin-top: 20px;
   margin-right: 300px;
 }
 
-/* Desktop menu */
-@media screen and (max-width: 1024px)  {
+/* Adjustments for screens smaller than 1024px (Desktops and large tablets) */
+@media screen and (max-width: 1024px) {
   .main-container .about-photo {
-    margin-right: 50px;
+    margin-left: 50; /* Center the photo */
+    margin-right: 50; /* Remove specific right margin */
   }
   .main-container .about-container {
-    flex-direction: column; /* Stack items vertically on smaller screens */
+    flex-direction: column;
+  }
+  .main-container p {
+    margin-right: 50px; /* Adjust right margin for text */
+    margin-left: 50px; /* Add left margin to align text properly */
+    margin-bottom: 25px;
+    font-size: 35px;
+  }
+  .main-container h1 {
+    font-size: 75px;
   }
 }
 
-/* Tablet menu */
-@media screen and (max-width: 720px)  {
+/* Adjustments for screens smaller than 768px (Tablets) */
+@media screen and (max-width: 768px) {
   .main-container .about-photo {
-    margin-right: 50px;
+    margin-left: 100px;
   }
-  .main-container .about-container {
-    flex-direction: column; /* Stack items vertically on smaller screens */
-  }
-}
-
-/*Mobile*/
-@media only screen and (max-width: 500px) {
-  .main-container .about-container {
-    flex-direction: column; /* Stack items vertically on smaller screens */
+  .main-container p {
+    text-align: center;
+    margin: 20px 50px; /* Simplify margins for better responsiveness */
+    font-size: 25px; /* Adjust font size for readability */
   }
 }
 
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
+/* Adjustments for screens smaller than 425px (Mobile phones) */
+@media only screen and (max-width: 425px) {
+  .main-container p {
+    margin: 20px 30px; /* Further reduce margins for very small screens */
+    font-size: 20px; /* Further reduce font size for small screens */
+  }
 }

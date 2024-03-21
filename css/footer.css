@@ -1,4 +1,18 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
 .footer {
+  flex: 0 0 auto;
+  bottom: 0;
+  width: 100%;
   background-color: black;
   color: white;
   text-align: center;
@@ -38,6 +52,8 @@ footer .footer-cta .button{
 }
 @media (min-width: 64em) {
   .footer .container {
+    margin-bottom: 0;
+    flex: 1;
     display: grid;
     grid-template-areas:
       "logo col1 col2 cta"
@@ -49,8 +65,9 @@ footer .footer-cta .button{
 
 @media (max-width: 63.9375em) {
   .footer .footer-logo {
-    padding-top: 12px;
+    padding-top: 20px;
     margin-bottom: 1.875rem;
+    scale: 100%;
   }
 }
 
