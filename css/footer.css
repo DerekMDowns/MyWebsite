@@ -8,9 +8,9 @@ footer .footer-cta .button{
   background-color: white;
   cursor: pointer;
   font-weight: bold;
-  font-size: 0.9375rem;
-  border-radius: 15px;
-  padding: 7px;
+  font-size: 25px;
+  border-radius: 20px;
+  padding: 10px;
   width: 200px;
 }
 footer .footer-cta .button:hover{
@@ -24,7 +24,18 @@ footer .footer-cta .button:hover{
     padding-bottom: 0;
   }
 }
-
+@media (min-width: 64em) {
+footer .footer-cta .button{
+  color: black;
+  background-color: white;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 25px;
+  padding: 7px;
+  width: 200px;
+  }
+}
 @media (min-width: 64em) {
   .footer .container {
     display: grid;
@@ -64,6 +75,7 @@ footer .footer-cta .button:hover{
 
 .footer .footer-social-media a:not(:last-child) {
   margin-right: 20px;
+  scale: 50px;
 }
 
 .footer .footer-social-media a:hover svg {
@@ -88,14 +100,24 @@ footer .footer-cta .button:hover{
 
 .footer .footer-links a {
   color: #fff;
-  font-size: 18px;
+  font-size: 25px;
   line-height: 2.25;
+  margin-top: 10px;
   transition: color 0.2s ease-in-out;
 }
 
 .footer .footer-links a:hover {
     color: skyblue;
     cursor: pointer;
+}
+
+@media (min-width: 64em) {
+  .footer .footer-links a {
+    color: #fff;
+    font-size: 18px;
+    line-height: 2.25;
+    transition: color 0.2s ease-in-out;
+  }
 }
 
 @media (min-width: 64em) {
@@ -132,7 +154,7 @@ footer .footer-cta .button:hover{
 .footer .footer-copyright p {
   color: gray;
   margin-top: auto;
-  font-size: 9px;
+  font-size: 11px;
 }
 
 @media (min-width: 64em) {
