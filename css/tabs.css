@@ -192,8 +192,7 @@ a {
 .upper-menu {
   list-style: none;
   display: flex;
-  align-items: center;
-  padding: 10px;
+  padding: 12px;
   margin: 0;
 }
 
@@ -204,7 +203,7 @@ a {
 .upper-menu li a {
   color: white;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 
@@ -221,21 +220,22 @@ a {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .upper-nav {
-      justify-content: center;
-  }
-
-  .upper-menu li {
-      margin-left: 10px;
-      margin-right: 10px;
-  }
-
-  .upper-menu li a {
-      font-size: 14px;
+  .upper-nav,
+  .upper-menu {
+    display: none; /* Hide the upper-nav in its original location */
   }
   
-  .fas {
-      font-size: 18px;
+  .menu .upper-menu-item {
+    order: -1; /* Make sure upper menu items come before the toggle */
+    padding: 15px 5px; /* Adjust padding to match other menu items */
+  }
+
+  .menu {
+    align-items: center; /* Ensure items are aligned correctly */
+  }
+
+  .fas.fa-bars {
+    margin-left: auto; /* Push the bars icon to the right */
   }
 }
 
