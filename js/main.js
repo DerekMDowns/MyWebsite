@@ -1,58 +1,42 @@
+// Assuming the first three list items in .upper-menu are the search, shopping cart, and login icons in that order
+
 // Toggle mobile menu
 const toggle = document.querySelector(".toggle");
 const menu = document.querySelector(".menu");
+const upperMenu = document.querySelector('.upper-menu');
+const searchItem = upperMenu.children[0]; // The search icon
+const cartItem = upperMenu.children[2]; // The shopping cart icon
+const userItem = upperMenu.children[1]; // The user login icon
 
 function toggleMenu() {
-    menu.classList.toggle("active");
-    // Update the icon based on menu state
-    const icon = menu.classList.contains("active") ? "fa-times" : "fa-bars";
-    toggle.querySelector("a").innerHTML = `<i class='fas ${icon} fa-3x'></i>`;
+    if (menu.classList.contains("active")) {
+        menu.classList.remove("active");
+        toggle.querySelector("i").classList.remove("fa-times");
+        toggle.querySelector("i").classList.add("fa-bars");
+    } else {
+        menu.classList.add("active");
+        toggle.querySelector("i").classList.remove("fa-bars");
+        toggle.querySelector("i").classList.add("fa-times");
+    }
 }
 
 toggle.addEventListener("click", toggleMenu, false);
 
-// Activate Submenu
-const items = document.querySelectorAll(".item");
-
-function toggleItem(e) {
-    if (this.classList.contains("submenu-active")) {
-        this.classList.remove("submenu-active");
-    } else {
-        menu.querySelector(".submenu-active")?.classList.remove("submenu-active");
-        this.classList.add("submenu-active");
-    }
-    e.stopPropagation();
-}
-
-items.forEach(item => {
-    item.querySelector(".submenu")?.addEventListener("click", toggleItem, false);
-    item.addEventListener("keypress", toggleItem, false);
-});
-
-// Close Submenu From Anywhere
-function closeSubmenu(e) {
-    if (!menu.contains(e.target)) {
-        menu.querySelector(".submenu-active")?.classList.remove("submenu-active");
-    }
-}
-
-document.addEventListener("click", closeSubmenu, false);
-
-// Adjust Menu for Viewport
-function adjustMenuForViewport() {
-    const loginItem = document.querySelector('.upper-menu .item:first-child'); // Assuming the login is the first item
-    const upperNav = document.querySelector('.upper-nav ul');
-
+// Function to adjust the navigation for smaller screens
+function adjustNavForSmallScreens() {
     if (window.innerWidth <= 768) {
-        // Change the login item to just show the "fa-user" icon next to "fa-bars"
-        loginItem.innerHTML = `<a href="logIn.html"><i class="fas fa-user"></i></a>`;
-        menu.insertBefore(loginItem, toggle); // Move next to the toggle button
+        // Add search, cart, and user items before the toggle menu item
+        menu.insertBefore(searchItem, toggle);
+        menu.insertBefore(cartItem, toggle);
+        menu.insertBefore(userItem, toggle);
     } else {
-        // Move the login item back to its original place and restore its full content if above 768px
-        loginItem.innerHTML = `<a href="logIn.html"><i class="fas fa-user"></i> Login</a>`;
-        upperNav.insertBefore(loginItem, upperNav.firstChild); // Move it back to the upper nav
+        // Move the items back to the upper menu when the screen is larger than 768px
+        upperMenu.insertBefore(searchItem, upperMenu.firstChild);
+        upperMenu.insertBefore(cartItem, upperMenu.children[1]);
+        upperMenu.insertBefore(userItem, upperMenu.children[2]);
     }
 }
 
-document.addEventListener('DOMContentLoaded', adjustMenuForViewport);
-window.addEventListener('resize', adjustMenuForViewport);
+// Add event listeners for DOM content loaded and window resize
+document.addEventListener('DOMContentLoaded', adjustNavForSmallScreens);
+window.addEventListener('resize', adjustNavForSmallScreens);

@@ -220,24 +220,39 @@ a {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .upper-nav,
-  .upper-menu {
-    display: none; /* Hide the upper-nav in its original location */
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu .toggle {
+    order: 2;
+  }
+
+  .menu .item {
+    order: 1; /* Make sure these items come before the toggle */
+    display: block; /* If they were set to none, ensure they are now displayed */
   }
   
-  .menu .upper-menu-item {
-    order: -1; /* Make sure upper menu items come before the toggle */
-    padding: 15px 5px; /* Adjust padding to match other menu items */
+  /* Adjust the styles of .item to match the size and margins as per the example image */
+  .menu .item:not(.logo) a {
+    color: white; /* or the color you desire */
+    display: flex;
+    align-items: center;
+    padding: 0 10px; /* Adjust the spacing as per the design */
   }
 
-  .menu {
-    align-items: center; /* Ensure items are aligned correctly */
+  /* Ensure the logo is aligned to the left */
+  .menu .logo {
+    order: -1; /* This ensures that the logo will always be at the start/left */
+    padding-right: 10px;
   }
-
-  .fas.fa-bars {
-    margin-left: auto; /* Push the bars icon to the right */
+  
+  /* You might want to hide the text for 'Login' and 'Sign Up' and only show icons on small screens */
+  .menu .item a {
+    display: none; /* Assuming you wrap your text in <span> tags */
   }
+  
+  /* Finally, make sure no other content is interfering with the layout */
 }
-
-
-
