@@ -1,42 +1,50 @@
-// Assuming the first three list items in .upper-menu are the search, shopping cart, and login icons in that order
-
 // Toggle mobile menu
 const toggle = document.querySelector(".toggle");
 const menu = document.querySelector(".menu");
-const upperMenu = document.querySelector('.upper-menu');
-const searchItem = upperMenu.children[0]; // The search icon
-const cartItem = upperMenu.children[2]; // The shopping cart icon
-const userItem = upperMenu.children[1]; // The user login icon
 
 function toggleMenu() {
-    if (menu.classList.contains("active")) {
-        menu.classList.remove("active");
-        toggle.querySelector("i").classList.remove("fa-times");
-        toggle.querySelector("i").classList.add("fa-bars");
-    } else {
-        menu.classList.add("active");
-        toggle.querySelector("i").classList.remove("fa-bars");
-        toggle.querySelector("i").classList.add("fa-times");
+    if (window.innerWidth <= 768) {
+        // Move the login and cart items next to the toggle button
+        const upperNavItems = document.querySelectorAll('.upper-menu .item');
+        upperNavItems.forEach(item => {
+            menu.insertBefore(item, toggle);
+        });
     }
+    menu.classList.toggle("active");
+    const icon = menu.classList.contains("active") ? "fa-times" : "fa-bars";
+    toggle.querySelector("a i").className = `fas ${icon} fa-3x`; // Update the class to change the icon
 }
 
 toggle.addEventListener("click", toggleMenu, false);
 
-// Function to adjust the navigation for smaller screens
-function adjustNavForSmallScreens() {
+// Function to adjust the display of menu items based on window size
+function adjustDisplayOfMenuItems() {
+    const upperNav = document.querySelector(".upper-nav");
+    const upperNavItems = document.querySelectorAll('.upper-menu .item');
     if (window.innerWidth <= 768) {
-        // Add search, cart, and user items before the toggle menu item
-        menu.insertBefore(searchItem, toggle);
-        menu.insertBefore(cartItem, toggle);
-        menu.insertBefore(userItem, toggle);
+        upperNavItems.forEach(item => {
+            menu.insertBefore(item, toggle); // Move the login and cart items next to the toggle
+        });
+        upperNav.style.display = 'none'; // Hide the upper-nav
     } else {
-        // Move the items back to the upper menu when the screen is larger than 768px
-        upperMenu.insertBefore(searchItem, upperMenu.firstChild);
-        upperMenu.insertBefore(cartItem, upperMenu.children[1]);
-        upperMenu.insertBefore(userItem, upperMenu.children[2]);
+        upperNavItems.forEach(item => {
+            upperNav.querySelector('.upper-menu').appendChild(item); // Move the items back to the upper-nav
+        });
+        upperNav.style.display = 'flex'; // Show the upper-nav
     }
 }
 
-// Add event listeners for DOM content loaded and window resize
-document.addEventListener('DOMContentLoaded', adjustNavForSmallScreens);
-window.addEventListener('resize', adjustNavForSmallScreens);
+// Initial adjustment when the page loads
+document.addEventListener('DOMContentLoaded', adjustDisplayOfMenuItems);
+
+// Adjustment when window resizes
+window.addEventListener('resize', adjustDisplayOfMenuItems);
+
+// Close Submenu From Anywhere
+function closeSubmenu(e) {
+    if (!menu.contains(e.target) && menu.querySelector(".submenu-active")) {
+        menu.querySelector(".submenu-active").classList.remove("submenu-active");
+    }
+}
+
+document.addEventListener("click", closeSubmenu, false);

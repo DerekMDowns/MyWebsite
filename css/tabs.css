@@ -111,7 +111,7 @@ a {
 
 
 /* Tablet menu */
-@media screen and (min-width: 720px)  {
+@media screen and (min-width: 768px)  {
   .menu {
     justify-content: center;
   }
@@ -171,7 +171,6 @@ a {
     display: block;
     position: absolute;
     left: 0;
-    top: 68px;
     background: black;
   }
 	
@@ -219,40 +218,8 @@ a {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
-  .menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+@media only screen and (max-width: 768px) {
+  .upper-nav {
+      display: none;
   }
-
-  .menu .toggle {
-    order: 2;
-  }
-
-  .menu .item {
-    order: 1; /* Make sure these items come before the toggle */
-    display: block; /* If they were set to none, ensure they are now displayed */
-  }
-  
-  /* Adjust the styles of .item to match the size and margins as per the example image */
-  .menu .item:not(.logo) a {
-    color: white; /* or the color you desire */
-    display: flex;
-    align-items: center;
-    padding: 0 10px; /* Adjust the spacing as per the design */
-  }
-
-  /* Ensure the logo is aligned to the left */
-  .menu .logo {
-    order: -1; /* This ensures that the logo will always be at the start/left */
-    padding-right: 10px;
-  }
-  
-  /* You might want to hide the text for 'Login' and 'Sign Up' and only show icons on small screens */
-  .menu .item a {
-    display: none; /* Assuming you wrap your text in <span> tags */
-  }
-  
-  /* Finally, make sure no other content is interfering with the layout */
 }
