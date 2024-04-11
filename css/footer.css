@@ -1,12 +1,32 @@
+html, body {
+  height: 100%; /* Make sure the html and body cover the full height of the viewport */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Use flexbox to create a column container */
+  flex-direction: column; /* Align children (content and footer) in a column */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 200px;
+  min-height: 100%;
+  position: relative;
+}
+
+.container {
+  flex: 1; /* This will make the content expand to fill the available space, pushing the footer down */
+}
+
 .footer {
-  overflow:auto;
-  bottom: 0;
   width: 100%;
   background-color: black;
   color: white;
   text-align: center;
-  margin-top: auto;
+  background-color: black;
+  color: white;
 }
+
 footer .footer-cta .button{
   color: black;
   background-color: white;
