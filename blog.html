@@ -14,62 +14,6 @@
     <!-- shortcut icon -->
     <link rel="shortcut icon" type="img" href="img/resumeLogo.png">
     <script src="https://kit.fontawesome.com/9f3d88cc0e.js" crossorigin="anonymous"></script>
-    <style>
-      .container-textbox {
-          max-width: 800px;
-          margin: 20px auto;
-          padding: 20px;
-          background-color: #fff;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-      .text-box {
-          width: 100%;
-          height: 200px;
-          margin-bottom: 10px;
-          padding: 10px;
-          font-size: 16px;
-          border: 1px solid #ddd;
-          resize: vertical;
-      }
-      .post-button {
-          display: inline-block;
-          padding: 10px 20px;
-          background-color: #007bff;
-          color: #fff;
-          border: none;
-          cursor: pointer;
-          margin-bottom: 20px;
-      }
-      .post-button:hover {
-          background-color: #0056b3;
-      }
-      .post-container {
-          margin-top: 20px;
-      }
-      input[type="file"] {
-          display: block;
-          margin: 10px 0;
-      }
-      .delete-button {
-            display: inline-block;
-            padding: 5px 10px;
-            background-color: #dc3545;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        .delete-button:hover {
-            background-color: #c82333;
-        }
-        .post-container {
-            margin-top: 20px;
-        }
-        input[type="file"] {
-            display: block;
-            margin: 10px 0;
-        }
-  </style>
 </head>
 <!-- body -->
 <body>
@@ -94,122 +38,24 @@
     </ul>
 </nav>
 <!--homepage main-container-->
-<div class="container-textbox">
-  <h1>My Personal Blog</h1>
-  <textarea id="blogTitle" class="text-box" placeholder="Enter your blog title here..."></textarea>
-  <textarea id="blogContent" class="text-box" placeholder="Start writing your blog content here..."></textarea>
-  <input type="file" id="fileInput" accept="image/*,video/*">
-  <button class="post-button" onclick="postBlog()">Post</button>
-  
-  <div id="mediaContainer"></div>
-  <div id="postContainer" class="post-container"></div>
-</div>
+<main>
+  <section class="blog-list">
+      <!-- Blog posts will be dynamically loaded here -->
+  </section>
 
-<script>
-  // Load stored posts when the page loads
-  window.onload = function() {
-      loadStoredPosts();
-  };
+  <section class="admin-panel">
+      <h2>Add New Blog Post</h2>
+      <form id="blogForm">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" required>
 
-  function postBlog() {
-      const title = document.getElementById('blogTitle').value;
-      const content = document.getElementById('blogContent').value;
-      
-      if (title.trim() === '' && content.trim() === '') {
-          alert('Please enter a title and content.');
-          return;
-      }
+          <label for="content">Content:</label>
+          <textarea id="content" name="content" rows="10" required></textarea>
 
-      const postId = new Date().getTime(); // Unique ID based on timestamp
-      const postContainer = document.getElementById('postContainer');
-
-      // Create elements for post
-      const postDiv = createPostElement(postId, title, content);
-
-      // Prepend the new post to the top
-      postContainer.prepend(postDiv);
-
-      savePost(postId, title, content);
-  }
-
-  function createPostElement(postId, title, content) {
-      const postDiv = document.createElement('div');
-      postDiv.id = `post-${postId}`;
-
-      const postTitle = document.createElement('h2');
-      postTitle.textContent = title;
-
-      const postContent = document.createElement('p');
-      postContent.textContent = content;
-
-      const deleteButton = document.createElement('button');
-      deleteButton.textContent = 'Delete';
-      deleteButton.className = 'delete-button';
-      deleteButton.onclick = function() {
-          deletePost(postId);
-      };
-
-      postDiv.appendChild(postTitle);
-      postDiv.appendChild(postContent);
-      postDiv.appendChild(deleteButton);
-
-      return postDiv;
-  }
-
-  function savePost(postId, title, content) {
-      const existingPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
-      existingPosts.unshift({ id: postId, title, content });
-      localStorage.setItem('blogPosts', JSON.stringify(existingPosts));
-  }
-
-  function loadStoredPosts() {
-      const storedPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
-      const postContainer = document.getElementById('postContainer');
-
-      storedPosts.forEach(post => {
-          const postDiv = createPostElement(post.id, post.title, post.content);
-          postContainer.prepend(postDiv);
-      });
-  }
-
-  function deletePost(postId) {
-      const postDiv = document.getElementById(`post-${postId}`);
-      if (postDiv) {
-          postDiv.remove();
-      }
-
-      let existingPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
-      existingPosts = existingPosts.filter(post => post.id !== postId);
-      localStorage.setItem('blogPosts', JSON.stringify(existingPosts));
-  }
-
-  document.getElementById('fileInput').addEventListener('change', function(event) {
-      const file = event.target.files[0];
-      const mediaContainer = document.getElementById('mediaContainer');
-      
-      if (file) {
-          const fileType = file.type;
-          const reader = new FileReader();
-          
-          reader.onload = function(e) {
-              if (fileType.startsWith('image/')) {
-                  const img = document.createElement('img');
-                  img.src = e.target.result;
-                  img.style.maxWidth = '100%';
-                  mediaContainer.appendChild(img);
-              } else if (fileType.startsWith('video/')) {
-                  const video = document.createElement('video');
-                  video.src = e.target.result;
-                  video.controls = true;
-                  video.style.maxWidth = '100%';
-                  mediaContainer.appendChild(video);
-              }
-          };
-
-          reader.readAsDataURL(file);
-      }
-  });
-</script>
+          <button type="submit">Publish</button>
+      </form>
+  </section>
+</main>
 
     
 <!-- Footer -->
