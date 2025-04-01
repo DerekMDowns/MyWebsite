@@ -74,3 +74,21 @@ function closeSubmenu(e) {
     }
 }
 document.addEventListener("click", closeSubmenu, false);
+
+// Slideshow for Index
+const ssIntervalTimer1 = 5000;
+
+function ssRotateSlides1() {
+    const slides = document.querySelectorAll('.ss-slide-1');
+    let currentSlide = document.querySelector('.ss-active-1');
+    
+    currentSlide.classList.remove('ss-active-1');
+    
+    currentSlide.nextElementSibling ?
+        currentSlide.nextElementSibling.classList.add('ss-active-1') :
+        slides[0].classList.add('ss-active-1');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    setInterval(ssRotateSlides1, ssIntervalTimer1);
+});

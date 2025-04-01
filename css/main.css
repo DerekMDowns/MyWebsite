@@ -38,7 +38,32 @@ body {
   margin-top: 20px;
   margin-right: 300px;
 }
+/* Slideshow for Index*/
+.ss-container-1 {
+  position: relative;
+  max-width: 1000px;
+  margin: 20px auto;
+  height: 400px;
+  overflow: hidden;
+}
 
+.ss-slide-1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.ss-image-1 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ss-slide-1.ss-active-1 {
+  opacity: 1;
+}
 /* Adjustments for screens smaller than 1024px (Desktops and large tablets) */
 @media screen and (max-width: 1024px) {
   .main-container .about-photo {
