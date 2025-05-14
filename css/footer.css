@@ -55,7 +55,7 @@ footer .footer-cta .button{
   background-color: white;
   cursor: pointer;
   font-weight: bold;
-  font-size: 50px;
+  font-size: 25px;
   border-radius: 25px;
   padding: 7px;
   width: 200px;
@@ -125,7 +125,7 @@ footer .footer-cta .button{
     align-items: flex-start;
   }
 }
-
+/*Footer links in phone view*/
 .footer .footer-links a {
   color: #fff;
   font-size: 50px;
