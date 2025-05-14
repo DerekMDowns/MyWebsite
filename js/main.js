@@ -76,19 +76,49 @@ function closeSubmenu(e) {
 document.addEventListener("click", closeSubmenu, false);
 
 // Slideshow for Index
-const ssIntervalTimer1 = 5000;
+let slideIndex = 0;
+let slides = document.querySelectorAll('.banner-slide');
+let dotsContainer = document.querySelector('.banner-controls');
+let interval = 10000; // 10 seconds
 
-function ssRotateSlides1() {
-    const slides = document.querySelectorAll('.ss-slide-1');
-    let currentSlide = document.querySelector('.ss-active-1');
-    
-    currentSlide.classList.remove('ss-active-1');
-    
-    currentSlide.nextElementSibling ?
-        currentSlide.nextElementSibling.classList.add('ss-active-1') :
-        slides[0].classList.add('ss-active-1');
+// Create dots
+slides.forEach((_, index) => {
+  let dot = document.createElement('div');
+  dot.className = 'banner-dot';
+  dot.addEventListener('click', () => setSlide(index));
+  dotsContainer.appendChild(dot);
+});
+
+let dots = document.querySelectorAll('.banner-dot');
+
+function showSlide(index) {
+  slides.forEach(slide => slide.classList.remove('active'));
+  dots.forEach(dot => dot.classList.remove('active'));
+  
+  slideIndex = (index + slides.length) % slides.length;
+  slides[slideIndex].classList.add('active');
+  dots[slideIndex].classList.add('active');
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    setInterval(ssRotateSlides1, ssIntervalTimer1);
-});
+function setSlide(index) {
+  showSlide(index);
+  resetInterval();
+}
+
+function nextSlide() {
+  showSlide(slideIndex + 1);
+}
+
+// Auto-advance
+let slideInterval = setInterval(nextSlide, interval);
+
+function resetInterval() {
+  clearInterval(slideInterval);
+  slideInterval = setInterval(nextSlide, interval);
+}
+
+// Click anywhere on banner to advance
+document.querySelector('.banner-container').addEventListener('click', nextSlide);
+
+// Initialize first dot
+dots[0].classList.add('active');
