@@ -71,7 +71,7 @@ footer .footer-cta .button{
     justify-items: start;
   }
 }
-
+/*Phone View*/
 @media (max-width: 63.9375em) {
   .footer .footer-logo {
     padding-bottom: 40px;
