@@ -23,11 +23,11 @@ a {
     list-style-type: none;
 }
 .logo {
-    font-size: 20px;
+    font-size: 40px;
     padding: 2px 5px 2px 0;
 }
 .menu .item {
-    font-size: 25px;
+    font-size: 10px;
     padding: 10px;
     position: relative; top: 25px; 
 }
