@@ -23,8 +23,8 @@ body {
 }
 
 .main-container h1 {
-  margin-top: 100px;
-  margin-bottom: 25px;
+  margin-top: 75px;
+  margin-bottom: 75px;
   font-weight: bold;
   text-align: center;
   color: black;
@@ -107,9 +107,10 @@ body {
 /*Slideshow CSS*/
 .banner-container {
   position: relative;
+  bottom: 25px;
   width: 100%;
-  height: 60vh;
-  max-height: 600px;
+  height: 70vh;
+  max-height: 1000px;
   overflow: hidden;
 }
 
@@ -128,7 +129,7 @@ body {
 .banner-slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit:cover;
 }
 
 .banner-text {
@@ -137,12 +138,11 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 3rem;
+  font-size: 4rem;
   text-align: center;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   z-index: 2;
   padding: 15px 30px;
-  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
 }
 
@@ -157,11 +157,11 @@ body {
 }
 
 .banner-dot {
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.5);
-  cursor: pointer;
+  cursor:pointer;
   transition: background-color 0.3s ease;
 }
 

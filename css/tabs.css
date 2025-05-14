@@ -13,7 +13,8 @@ nav {
     left: 0;
     width: 100%;
     background: black;
-    padding: 5px;
+    padding: 5px 100px;
+    margin-bottom: auto;
 }
 a {
     color: white;
