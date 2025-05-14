@@ -1,9 +1,20 @@
-html, body {
-  height: 100%; /* Make sure the html and body cover the full height of the viewport */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  display: flex; /* Use flexbox to create a column container */
-  flex-direction: column; /* Align children (content and footer) in a column */
+  display: flex;
+  flex-direction: column;
 }
 
 body {
@@ -15,7 +26,7 @@ body {
 }
 
 .container {
-  flex: 1; /* This will make the content expand to fill the available space, pushing the footer down */
+  flex: 1;
 }
 
 .footer {
@@ -26,118 +37,151 @@ body {
   margin-top: 100px;
 }
 
-footer .footer-cta .button{
-  color: black;
-  background-color: white;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 50px;
-  border-radius: 20px;
-  padding: 10px;
-  width: 200px;
-}
-footer .footer-cta .button:hover{
-  color: skyblue;
-  cursor: pointer;
+/* Increased Link Size (Default View Only) */
+.footer .footer-links a {
+  color: #fff;
+  font-size: 22px;
+  line-height: 2.25;
+  margin-top: 10px;
+  transition: color 0.2s ease-in-out;
 }
 
-@media (min-width: 64em) {
-  .footer {
-    padding: 3.125rem;
-    padding-bottom: 0;
-  }
-}
-@media (min-width: 64em) {
-footer .footer-cta .button{
+/* Shrunk button text in default view */
+.footer .footer-cta .button {
   color: black;
   background-color: white;
   cursor: pointer;
   font-weight: bold;
   font-size: 25px;
-  border-radius: 25px;
-  padding: 7px;
+  border-radius: 20px;
+  padding: 10px;
   width: 200px;
-  }
 }
+
+.footer .footer-cta .button:hover {
+  color: skyblue;
+  cursor: pointer;
+}
+
+/* Grid layout on Desktop */
 @media (min-width: 64em) {
+  .footer {
+    padding: 3.125rem;
+    padding-bottom: 0;
+  }
+
+  footer .footer-cta .button {
+    color: black;
+    background-color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 25px;
+    border-radius: 25px;
+    padding: 7px;
+    width: 200px;
+  }
+
   .footer .container {
     margin-bottom: 0;
     flex: 1;
     display: grid;
-    grid-template-areas:
-      "logo col1 col2 cta"
-      "social col1 col2 cta"
-      "copyright col1 col2 github";
+    grid-template-areas: 
+    "logo col1 col2 cta" 
+    "social col1 col2 cta" 
+    "copyright col1 col2 github";
     justify-items: start;
-  }
-}
-/*Phone View*/
-@media (max-width: 63.9375em) {
-  .footer .footer-logo {
-    padding-bottom: 40px;
-    margin-bottom: 1.875rem;
-    margin-top: 125px;
-    scale: 250%;
+    /* Add flex to center align the sections */
+    align-items: center;
+
   }
 }
 
-@media (min-width: 64em) {
-  .footer .footer-logo {
-    grid-area: logo;
-  }
-}
-
+/* Phone View */
 @media (max-width: 63.9375em) {
+  .footer {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /*Center Align*/
+    padding: 15px;
+    text-align: center; /* center the attributes in phone view */
+
+  }
+  /* Apply these properties only in phone view */
+  .footer .footer-logo,
   .footer .footer-social-media {
-    padding-top: 15px;
-    margin-bottom: 1.875rem;
-    scale: 400%;
+    text-align: center;
   }
-}
 
-@media (min-width: 64em) {
-.footer .footer-social-media {
-    grid-area: social;
-    align-self: end;
+  .footer .footer-logo {
+    padding-bottom: 10px;
+    margin-bottom: 0.5rem;
+    margin-top: 20px;
+    width: auto;
+    /* No set width */
+    max-width: 300px;
   }
-}
 
-.footer .footer-social-media a:not(:last-child) {
-  margin-right: 15px;
-  scale: 50px;
-}
+  .footer .footer-logo img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
 
-.footer .footer-social-media a:hover svg {
-  transform: scale(1.15);
-  transition: transform 0.2s ease-in-out;
-}
+  .footer .footer-social-media {
+    padding-left: 20px;
+    padding-top: 5px;
+    margin-bottom: 1rem;
+    scale: 125%;
+  }
 
-.footer .footer-social-media svg.light {
-  filter: invert(1);
-}
+  .footer .footer-social-media a {
+    margin-right: 10px;
+  }
 
-.footer .footer-links {
-  display: flex;
-  flex-direction: column;
+  .footer .footer-social-media a:hover svg {
+    transform: scale(1.15);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .footer .footer-social-media svg.light {
+    filter: invert(1);
+  }
+
+  .footer .footer-links {
+    display: flex;
+    flex-direction: column; /* column to stack the items */
+    align-items: center; /* allign in phone view to center */
+    width: 100%;
+    /* all width available */
+    margin-bottom: 1rem;
+    /* set a margin for the items */
+
+  }
+  /* change the align for phoneview */
+  .footer .footer-links a {
+    color: #fff;
+    font-size: 25px;
+    line-height: 1.5;
+    margin-top: 5px;
+    margin-left: 0;
+    padding-left: 0;
+    transition: color 0.2s ease-in-out;
+    display: block;
+      text-align: center; /* center things in the phone view */
+
+  }
+  /* make the sizes fit to be automatic */
+  .footer .col1,
+  .footer .col2 {
+    margin-bottom: 0;
+    width: 100%;
+  }
 }
 
 @media (min-width: 64em) {
   .footer .footer-links {
     align-items: flex-start;
   }
-}
-/*Footer links in phone view*/
-.footer .footer-links a {
-  color: #fff;
-  font-size: 50px;
-  line-height: 2.25;
-  margin-top: 10px;
-  transition: color 0.2s ease-in-out;
-}
-
-.footer .footer-links a:hover {
-    color: skyblue;
-    cursor: pointer;
 }
 
 @media (min-width: 64em) {
@@ -167,6 +211,15 @@ footer .footer-cta .button{
   }
 }
 
+/* Original placement and style for back to top button */
+@media (min-width: 64em) {
+  .footer .footer-cta {
+    grid-area: cta;
+    justify-self: end;
+  }
+}
+
+/* Preserve button's original placement for mobile */
 @media (max-width: 63.9375em) {
   .footer .footer-cta {
     margin-bottom: 1.875rem;
@@ -195,7 +248,7 @@ footer .footer-cta .button{
 }
 
 .attribution {
-  color: #fff;
+  color: gray;
   font-size: 0.8125rem;
   text-align: center;
   padding-top: 1.875rem;
@@ -216,8 +269,8 @@ footer .footer-cta .button{
 .attribution .footer-github {
   list-style: none;
   margin-left: 2.5px;
-  position: relative; 
-  top: 6px; 
+  position: relative;
+  top: 6px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -234,6 +287,88 @@ footer .footer-cta .button{
   transform: scale(1.15);
 }
 
+.footer-social-media svg:hover {
+  transform: scale(1.15);
+  transition: transform 0.2s ease-in-out;
+}
+
 .attribution .footer-github img.light {
   filter: invert(1);
+}
+
+@media (min-width: 64em) {
+  .footer .container {
+    grid-template-columns: auto 1fr 1fr auto; /* Add this line */
+    grid-template-areas: 
+      "logo col1 col2 cta" 
+      "social col1 col2 cta" 
+      "copyright col1 col2 github";
+    justify-items: start;
+    align-items: center;
+    gap: 1rem; /* Optional: Add spacing between columns */
+  }
+}
+@media (min-width: 64em) {
+  .footer .footer-social-media {
+    grid-area: social;
+    justify-self: center; /* Add this line */
+    width: 100%;
+  }
+}
+
+@media (min-width: 64em) {
+  .footer .col1,
+  .footer .col2 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 64em) {
+  .footer .footer-links {
+    width: 100%;
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 64em) {
+  .footer .container {
+    grid-template-columns: auto 1fr 1fr auto; /* Keep existing column definition */
+    justify-content: center; /* Add this to center the entire grid */
+  }
+
+  .footer .footer-links {
+    align-items: center !important;
+  }
+}
+@media (min-width: 64em) {
+  /* Reduce spacing between links */
+  .footer .footer-links a {
+    line-height: 1.8;  /* Reduced from 2.25 */
+    margin-top: 0;     /* Remove extra top margin */
+    padding: 4px 0;    /* Add controlled padding */
+  }
+
+  /* Adjust column positioning */
+  .footer .container {
+    grid-template-columns: auto auto auto auto; /* More controlled columns */
+    justify-content: space-between; /* Better distribution */
+    column-gap: 2rem; /* Reduce space between columns */
+  }
+
+  /* Left-align columns */
+  .footer .col1,
+  .footer .col2 {
+    justify-self: start;
+    text-align: left;
+    padding-left: 1.5rem; /* Add left padding */
+  }
+
+  /* Remove previous centering */
+  .footer .footer-links {
+    align-items: flex-start !important;
+  }
 }
