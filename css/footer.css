@@ -372,3 +372,34 @@ body {
     align-items: flex-start !important;
   }
 }
+
+@media (max-width: 63.9375em) {
+  /* Social Media Icons */
+  .footer .footer-social-media {
+    scale: 300%; /* Increased from 125% */
+    padding-top: 20px;
+    margin: 20px 0; /* Add vertical spacing */
+  }
+
+  /* Footer Links */
+  .footer .footer-links a {
+    font-size: 50px; /* Increased from 25px */
+    line-height: 1.8; /* Tighter spacing */
+    margin: 8px 0; /* Reduced margin */
+  }
+
+  /* Button */
+  .footer .footer-cta .button {
+    font-size: 40px; /* Increased from 25px */
+    padding: 12px 20px; /* Larger padding */
+    margin: 15px 0; /* Add breathing room */
+    width: auto; /* Remove fixed width */
+    display: inline-block; /* Better sizing */
+  }
+
+  /* SVG Icons */
+  .footer-social-media svg {
+    width: 40px; /* Increased from 30px */
+    height: 40px; /* Increased from 25px */
+  }
+}
