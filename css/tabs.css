@@ -27,7 +27,7 @@ a {
     padding: 2px 5px 2px 0;
 }
 .menu .item {
-    font-size: 10px;
+    font-size: 25px;
     padding: 10px;
     position: relative; top: 25px; 
 }
@@ -72,7 +72,7 @@ a {
   width: 100%;
   text-align: center;
   display: none;
-  font-size: 40px;
+  font-size: 25px;
 }
 
 .active .item {
